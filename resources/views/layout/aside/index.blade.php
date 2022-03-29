@@ -47,7 +47,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('categories.index')}}" class="nav-link {{Route::is('categories.index') ? 'active' : ''}}">
+                    <a href="{{route('cate-index')}}" class="nav-link {{
+                        Route::is('cate-index') || Route::is('cate-create') || Route::is('cate-edit') ? 'active' : ''
+                        }}">
                         <p>Category</p>
                     </a>
                 </li>

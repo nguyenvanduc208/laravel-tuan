@@ -90,7 +90,10 @@ Route::get('/users/{userId}/{username?}', function (
 
 // prefix: duong dan chung cua group, noi -> /categories/create
 // name: name chung cua group, noi cac name con: categories.index
-Route::prefix('/categories')->name('categories.')->group(function () {
+Route::prefix('/categories')->name('cate-')->group(function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');
-    Route::get('/add', [CategoryController::class, 'add'])->name('add');
+    Route::get('/delete/{id}',[CategoryController::class, 'delete'])->name('delete');
+    Route::get('/store',[CategoryController::class, 'add'])->name('create');
+    Route::post('/save',[CategoryController::class, 'save'])->name('save');
+    Route::get('/edit/{category}',[CategoryController::class,'edit'])->name('edit');
 });
